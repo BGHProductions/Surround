@@ -19,18 +19,22 @@
 
     <ImageView
         android:id="@+id/ivCoverArt"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:padding="70dp"
+        android:layout_above="@id/seekBar"
+        android:layout_below="@id/disconnectBtn"
         android:scaleType="centerCrop"
         android:layout_centerInParent="true"
-        app:srcCompat="@android:color/white" />
+        app:srcCompat="@android:color/white"/>
 
     <com.sdsmdg.harjot.crollerTest.Croller
         android:id="@+id/croller"
         android:layout_width="match_parent"
-        android:layout_height="426dp"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
+        android:layout_height="match_parent"
+        android:layout_above="@id/seekBar"
+        android:layout_below="@id/disconnectBtn"
+        android:layout_centerInParent="true"
         app:back_circle_color="@android:color/transparent"
         app:indicator_color="@color/colorAccent"
         app:indicator_width="10"
@@ -40,14 +44,22 @@
         app:min="0"
         app:progress_primary_color="#BCA9E6"
         app:progress_secondary_color="#33ffffff"
-        app:start_offset="45" />
+        app:start_offset="45"/>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/seekBar"
+        android:layout_below="@id/disconnectBtn"
+        android:layout_centerInParent="true">
     <com.example.bertogonz3000.surround.views.VolcationSpinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:padding="25dp" />
+        android:layout_margin="5dp"
+        android:padding="15dp"/>
+    </RelativeLayout>
 
 
     <ImageButton
