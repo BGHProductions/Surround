@@ -112,7 +112,7 @@ public class SongSelectionActivity extends AppCompatActivity {
         heliList.add(R.raw.helicopter);
 
         Track heliTrack = new Track("Helicopter", "Single Sound", heliList);
-        heliTrack.setDrawable(R.drawable.helicopter);
+        heliTrack.setDrawable(R.drawable.helicoptersun);
 
         tracklist.add(heliTrack);
 
