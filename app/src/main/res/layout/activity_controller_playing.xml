@@ -169,4 +169,22 @@
         android:textColor="@color/halfWhite"
         android:textSize="18sp" />
 
+    <ImageView
+        android:id="@+id/ivDisconnected"
+        android:layout_width="40dp"
+        android:layout_height="34dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:foregroundGravity="right"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/ivConnected"
+        android:layout_width="40dp"
+        android:layout_height="34dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:foregroundGravity="right" />
+
+
 </RelativeLayout>
