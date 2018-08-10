@@ -68,6 +68,8 @@ public class ControllerPlayingActivity extends AppCompatActivity implements Seek
     ImageButton playButton;
     Croller croller;
     ImageView ivCover;
+    TextView tvArtist;
+    TextView tvTrack;
 
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
@@ -98,6 +100,11 @@ public class ControllerPlayingActivity extends AppCompatActivity implements Seek
                 .load(track.getDrawable())
                 .apply(RequestOptions.circleCropTransform())
                 .into(ivCover);
+
+        tvTrack = findViewById(R.id.tvTrackName);
+        tvArtist = findViewById(R.id.tvArtistName);
+        tvTrack.setText(track.getName());
+        tvArtist.setText(track.getArtist());
 
 //        //TODO - uncomment to use old server design
 //        song = Parcels.unwrap(getIntent().getParcelableExtra("song"));
@@ -182,7 +189,7 @@ public class ControllerPlayingActivity extends AppCompatActivity implements Seek
         //if the app crashed before, so now you want to resume the song as the controller at the position you last left off on
         if(trackName.equals(preferences.getString("trackName", null))) {
 
-            int pos = preferences.getInt("currentPosition", 1000);
+            int pos = preferences.getInt("currentPosition", 0);
             mp.seekTo(pos);
 
             // update timer progress
@@ -251,14 +258,14 @@ public class ControllerPlayingActivity extends AppCompatActivity implements Seek
                     throwing.saveInBackground();
                     spinner.setVisibility(View.VISIBLE);
                     croller.setVisibility(View.GONE);
-                    btnThrowSound.setText("Surround");
+                    btnThrowSound.setText("Surround Mode");
                 }
                 else {
                     throwing.setThrowing(false);
                     throwing.saveInBackground();
                     spinner.setVisibility(View.GONE);
                     croller.setVisibility(View.VISIBLE);
-                    btnThrowSound.setText("Throw");
+                    btnThrowSound.setText("Throw Sound");
                 }
 
                 //old server
